@@ -1,11 +1,3 @@
-.wrapper{
-    @apply
-    w-[290px]
-    min-w-[290px]
-    h-screen 
-    sticky 
-    top-0
-}
 
 .logo{
     @apply
@@ -13,3 +5,22 @@
     pr-6
     w-auto
 }
+
+.navContent{
+    @apply
+    overflow-y-auto
+}
+
+.wrapper {
+    @apply
+      bg-brown-dark
+      border-r
+      border-brown-light
+      w-[200px]
+      p-4
+      shrink-0;
+  }
+  
+  .navItem {
+    @apply mb-1;
+  }

@@ -1,22 +1,29 @@
-import React from 'react'
-import LogoLight from '../../assets/images/logo-light-full.png'
-import LogoDark from '../../assets/images/logo-dark-full.png'
-import { NAV_MODE_TRANSPARENT } from '../../consts/navigation'
+import React, { useMemo } from 'react'
+import { NAV_LINKS } from '../../consts/navigation'
+import { NavLinkType } from '../../consts/types'
+import Link from '../../ui-library/components/Link'
 
 import s from './styles.module.css'
 
+function renderNavLink(link: NavLinkType, index: number) {
+    const { url, text } = link
+
+    return (
+        <li
+            key={index}
+            className={s.navItem}
+        >
+            <Link to={url}>{text}</Link>
+        </li>
+    )
+}
+
 const SideNav = () => {
-    // TODO:Use toggle button val to reflect here and set the logo accordingly
-    const navMode = NAV_MODE_TRANSPARENT
+    const navLinks = useMemo(() => NAV_LINKS.map(renderNavLink), [])
 
     return (
         <div className={s.wrapper}>
-            <div>
-                <div className={s.logo}>
-                    <img src={navMode === NAV_MODE_TRANSPARENT ? LogoLight : LogoDark}
-                    alt ="Admin"/>
-                </div>
-            </div>
+            <ul>{navLinks}</ul>
         </div>
     )
 }
