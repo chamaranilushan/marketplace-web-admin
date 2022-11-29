@@ -1,0 +1,15 @@
+.wrapper{
+    @apply
+    w-[290px]
+    min-w-[290px]
+    h-screen 
+    sticky 
+    top-0
+}
+
+.logo{
+    @apply
+    pl-6 
+    pr-6
+    w-auto
+}

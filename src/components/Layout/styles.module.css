@@ -1,0 +1,13 @@
+.wrapper{
+    @apply
+    flex-col 
+    flex
+    flex-auto
+}
+
+.sideNavWrapper{
+    @apply
+    flex 
+    flex-auto
+     min-w-0
+}
